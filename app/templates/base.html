@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from freebw.com/templates/oragnive-v1/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Feb 2024 16:59:25 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
+<head>
+    <title>{{setting.site_title}}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="{% if setting.favicon %}{{setting.favicon.url}}{% endif %}" />
+
+    <link rel="stylesheet" type="text/css" href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static "fonts/font-awesome-4.7.0/css/font-awesome.min.css" %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static "fonts/linearicons-v1.0.0/icon-font.min.css" %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static "vendor/animate/animate.css" %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static "vendor/css-hamburgers/hamburgers.min.css" %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static "vendor/animsition/css/animsition.min.css" %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static "vendor/select2/select2.min.css" %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static "vendor/daterangepicker/daterangepicker.css" %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static "vendor/slick/slick.css" %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static "vendor/lightbox2/css/lightbox.min.css" %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static "vendor/perfect-scrollbar/perfect-scrollbar.css" %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static "vendor/revolution/css/layers.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "vendor/revolution/css/navigation.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "vendor/revolution/css/settings.css" %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static "css/util.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/custom.css" %}">
+
+</head>
+
+<body class="animsition">
+    {% block header %}
+    {% include "components/header/header.html" %}
+    {% endblock header %}
+    {% block main %}
+    {% endblock main %}
+
+    {% include "components/footer/footer.html" %}
+
+    <div class="btn-back-to-top bg0-hov m-b-15" id="myBtn">
+        <span class="symbol-btn-back-to-top">
+            <span class="lnr lnr-chevron-up"></span>
+        </span>
+    </div>
+
+    <script data-cfasync="false"
+        src="https://freebw.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="{% static "vendor/jquery/jquery-3.2.1.min.js" %}"></script>
+
+    <script src="{% static "vendor/animsition/js/animsition.min.js" %}"></script>
+
+    <script src="{% static "vendor/bootstrap/js/popper.js" %}"></script>
+    <script src="{% static "vendor/bootstrap/js/bootstrap.min.js" %}"></script>
+
+    <script src="{% static "vendor/revolution/js/jquery.themepunch.tools.min.js" %}"></script>
+    <script src="{% static "vendor/revolution/js/jquery.themepunch.revolution.min.js" %}"></script>
+    <script src="{% static "vendor/revolution/js/extensions/revolution.extension.video.min.js" %}"></script>
+    <script src="{% static "vendor/revolution/js/extensions/revolution.extension.carousel.min.js" %}"></script>
+    <script src="{% static "vendor/revolution/js/extensions/revolution.extension.slideanims.min.js" %}"></script>
+    <script src="{% static "vendor/revolution/js/extensions/revolution.extension.actions.min.js" %}"></script>
+    <script src="{% static "vendor/revolution/js/extensions/revolution.extension.layeranimation.min.js" %}"></script>
+    <script src="{% static "vendor/revolution/js/extensions/revolution.extension.kenburn.min.js" %}"></script>
+    <script src="{% static "vendor/revolution/js/extensions/revolution.extension.navigation.min.js" %}"></script>
+    <script src="{% static "vendor/revolution/js/extensions/revolution.extension.migration.min.js" %}"></script>
+    <script src="{% static "vendor/revolution/js/extensions/revolution.extension.parallax.min.js" %}"></script>
+    <script src="{% static "js/revo-custom.js" %}"></script>
+
+    <script src="{% static "vendor/select2/select2.min.js" %}"></script>
+
+    <script src="{% static "vendor/daterangepicker/moment.min.js" %}"></script>
+    <script src="{% static "vendor/daterangepicker/daterangepicker.js" %}"></script>
+
+    <script src="{% static "vendor/slick/slick.min.js" %}"></script>
+    <script src="{% static "js/slick-custom.js" %}"></script>
+
+    <script src="{% static "vendor/parallax100/parallax100.js" %}"></script>
+
+    <script src="{% static "vendor/lightbox2/js/lightbox.min.js" %}"></script>
+
+    <script src="{% static "vendor/isotope/isotope.pkgd.min.js" %}"></script>
+
+    <script src="{% static "vendor/sweetalert/sweetalert.min.js" %}"></script>
+
+    <script src="{% static "vendor/countdowntime/moment.min.js" %}"></script>
+    <script src="{% static "vendor/countdowntime/moment-timezone.min.js" %}"></script>
+    <script src="{% static "vendor/countdowntime/moment-timezone-with-data.min.js" %}"></script>
+    <script src="{% static "vendor/countdowntime/jquery.countdown.min.js" %}"></script>
+    <script src="{% static "vendor/countdowntime/countdowntime.js" %}"></script>
+
+    <script src="{% static "vendor/perfect-scrollbar/perfect-scrollbar.min.js" %}"></script>
+
+    <script src="{% static "js/main.js" %}"></script>
+</body>
+</html>

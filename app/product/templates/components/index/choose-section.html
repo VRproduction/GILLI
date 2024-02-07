@@ -1,0 +1,38 @@
+{% load static %}
+<section class="sec-whychose bg0 p-t-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 order-md-2">
+                <div class="p-l-50 p-t-60 p-l-0-lg">
+                    <div class="size-a-1 flex-col-l-m p-b-65">
+                        <h3 class="txt-l-101 cl3 respon1">
+                            NİYƏ BİZİ SEÇMƏLİSİNİZ
+                        </h3>
+                    </div>
+                    <div>
+                        {% for punkt in choose_section.punkts.all %}
+                        <div class="flex-w p-b-50">
+                            <div class="size-w-22 wrap-pic-max-s flex-t-l p-t-5">
+                                <img src="{{punkt.image.url}}" alt="SYMBOL">
+                            </div>
+                            <div class="size-w-23">
+                                <span class="txt-m-101 cl3">
+                                    {{punkt.title}}
+                                </span>
+                                <p class="txt-s-101 cl6 p-t-12">
+                                    {{punkt.description}}
+                                </p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <div class="flex-b h-full">
+                    <div class="wrap-pic-max-w"><img src="{{choose_section.image.url}}" alt="IMG"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

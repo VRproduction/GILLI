@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main %}
+<section class="sec-product-detail bg0 p-t-150 p-b-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 col-lg-6">
+                <div class="m-r--30 m-r-0-lg">
+
+                    <div id="slide100-01">
+                        <div class="wrap-main-pic-100 bo-all-1 bocl12 pos-relative">
+                            <div class="main-frame">
+                                <div class="wrap-main-pic">
+                                    <div class="main-pic">
+                                        <img src="{{product.image.url}}" alt="IMG-SLIDE">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 col-lg-6">
+                <div class="p-l-70 p-t-35 p-l-0-lg">
+                    <h4 class="js-name1 txt-l-104 cl3 p-b-16">
+                        {{product.title}}
+                    </h4>
+                    <p class="txt-s-101 cl6">
+                        {{product.description}}
+                    </p>
+                    <div class="flex-w flex-m p-t-55 p-b-30">
+                        <a {% if product.link %}href="{{product.link}}"{% endif %} class="flex-c-m txt-s-103 cl0 bg10 size-a-2 hov-btn2 trans-04 m-b-30 text-white">
+                            Sifariş et
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock main %}

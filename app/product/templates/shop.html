@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main %}
+<div class="bg0 p-t-170 p-b-95">
+    <div class="container">
+        <div class="shop-grid">
+            <div class="row">
+                {% for product in products %}
+                    {% include "components/product/product-item.html" with product=product %}
+                {% endfor %}
+            </div>
+        </div>
+        {% if page_obj.paginator.num_pages > 1 %}
+        <div class="flex-w flex-c-m p-t-47">
+            {% if page_obj.has_previous %}
+                {% comment %} <a href="?page=1"
+                    class="flex-c-m txt-s-115 cl6 size-a-23 bo-all-1 bocl15 hov-btn1 trans-04 m-all-3">
+                    1
+                </a> {% endcomment %}
+                <a href="?page=1"
+                class="flex-c-m txt-s-115 cl6 size-a-24 how-btn1 bo-all-1 bocl15 hov-btn1 trans-04 m-all-3 p-b-1">
+                <span class="lnr lnr-chevron-left m-t-3"></span>
+                <span class="lnr lnr-chevron-left m-t-3"></span>
+                </a>
+            {% endif %}
+        
+            {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <span class="flex-c-m txt-s-115 cl6 size-a-23 bo-all-1 bocl15 hov-btn1 trans-04 m-all-3 active-pagi1">
+                        {{ num }}
+                    </span>
+                {% else %}
+                    <a href="?page={{ num }}" class="flex-c-m txt-s-115 cl6 size-a-23 bo-all-1 bocl15 hov-btn1 trans-04 m-all-3">
+                        {{ num }}
+                    </a>
+                {% endif %}
+            {% endfor %}
+        
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.paginator.num_pages }}"
+                class="flex-c-m txt-s-115 cl6 size-a-24 how-btn1 bo-all-1 bocl15 hov-btn1 trans-04 m-all-3 p-b-1">
+                <span class="lnr lnr-chevron-right m-t-3"></span>
+                <span class="lnr lnr-chevron-right m-t-3"></span>
+            </a>
+            {% endif %}
+        </div>
+        {% endif %}
+        
+    </div>
+</div>
+
+{% endblock main %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block main %}
+<section class="bg0 p-t-150 p-b-95">
+    <div class="container">
+        <div class="row">
+            {% for blog in blogs %}
+            <div class="col-sm-6 col-md-4 p-b-45">
+                <div>
+                    <a href="{{blog.get_absolute_url}}" class="wrap-pic-w hov4 how-pos5-parent">
+                        <img src="{{blog.image.url}}" alt="BLOG">
+                        <div class="flex-col-c-m size-a-9 bg10 how-pos5">
+                            <span class="txt-l-110 cl0">
+                                {{blog.created.day}}
+                            </span>
+                            <span class="txt-s-110 cl0">
+                                {{blog.created|date:"M"}}
+                            </span>
+                        </div>
+                    </a>
+                    <div class="p-t-28">
+                        <h4 class="p-b-10">
+                            <a href="{{blog.get_absolute_url}}" class="txt-m-109 cl3 hov-cl10 trans-04">
+                                {{blog.title}}
+                            </a>
+                        </h4>
+                        <p class="txt-s-101 cl6 p-b-18">
+                            {{ blog.description|striptags|safe|truncatechars:"90"}}
+                        </p>
+                        <div class="how-line2 p-l-40">
+                            <a href="{{blog.get_absolute_url}}" class="txt-s-105 cl9 hov-cl10 trans-04">
+                                Daha çox
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock main %}

@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main %}
+<section class="bg0 p-t-170 p-b-100">
+    <div class="container">
+        <div class="size-a-1 flex-col-c-m p-b-70">
+            <h3 class="txt-center txt-l-101 cl3 respon1">
+                Əlaqə
+            </h3>
+        </div>
+        <form id="contact-form" class="validate-form" method="post"
+             name="contact">
+             {% csrf_token %}
+            <div class="row">
+                <div class="col-sm-6 p-b-30">
+                    <div class="validate-input" data-validate="Name is required">
+                        <input class="txt-s-101 cl3 plh1 size-a-46 bo-all-1 bocl15 focus1 p-rl-20" type="text"
+                            name="name" placeholder="Ad soyad *" required>
+                    </div>
+                </div>
+                <div class="col-sm-6 p-b-30">
+                    <div class="validate-input" data-validate="Valid email is: ex@abc.xyz">
+                        <input class="txt-s-101 cl3 plh1 size-a-46 bo-all-1 bocl15 focus1 p-rl-20" type="text"
+                            name="email" placeholder="Email *" required>
+                    </div>
+                </div>
+                <div class="col-sm-6 p-b-30">
+                    <div>
+                        <input class="txt-s-101 cl3 plh1 size-a-46 bo-all-1 bocl15 focus1 p-rl-20" type="text"
+                            name="subject" placeholder="Mövzu *">
+                    </div>
+                </div>
+                <div class="col-sm-6 p-b-30">
+                    <div class="validate-input" data-validate="Phone is required">
+                        <input class="txt-s-101 cl3 plh1 size-a-46 bo-all-1 bocl15 focus1 p-rl-20" type="text"
+                            name="number" placeholder="Nömrə *">
+                    </div>
+                </div>
+                <div class="col-12 p-b-30">
+                    <div class="validate-input" data-validate="Message is required">
+                        <textarea class="txt-s-101 cl3 plh1 size-a-47 bo-all-1 bocl15 focus1 p-rl-20 p-tb-10"
+                            name="text" placeholder="Mesaj" required></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-c p-t-10">
+                <button class="flex-c-m txt-s-103 cl0 bg10 size-a-2 hov-btn2 trans-04">
+                    Göndər
+                </button>
+            </div>
+        </form>
+        <p class="text-success">
+            {% if messages %}
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            {% endif %}
+        </p>
+    </div>
+</section>
+
+<section class="home-map-area">
+    <iframe src="{{setting.g_adress_iframe}}" style="width:100%; height:550px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+
+<section class="container p-t-90 p-b-45">
+    <div class="row">
+        <div class="col-sm-6 col-lg-4 p-b-50">
+            <div class="flex-col-c-m p-rl-25">
+                <div class="wrap-pic-max-s p-b-25">
+                    <img src="{% static "images/icons/icon-address.png" %}" alt="IMG">
+                </div>
+                <h5 class="txt-m-114 cl3 txt-center p-b-9">
+                    Ünvan
+                </h5>
+                <span class="txt-s-101 cl6 txt-center">
+                    {{setting.adress}}
+                </span>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 p-b-50">
+            <div class="flex-col-c-m p-rl-25">
+                <div class="wrap-pic-max-s p-b-25">
+                    <img src="{% static "images/icons/icon-phone-03.png" %}" alt="IMG">
+                </div>
+                <h5 class="txt-m-114 cl3 txt-center p-b-9">
+                    Nömrə
+                </h5>
+                {% for number in setting.numbers.all %}
+                <span class="txt-s-101 cl6 txt-center">
+                    {{number.number}}
+                </span>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 p-b-50">
+            <div class="flex-col-c-m p-rl-25">
+                <div class="wrap-pic-max-s p-b-25 p-t-5">
+                    <img src="{% static "images/icons/icon-mail-03.png" %}" alt="IMG">
+                </div>
+                <h5 class="txt-m-114 cl3 txt-center p-b-9">
+                    Email
+                </h5>
+                <span class="txt-s-101 cl6 txt-center">
+                    <a class="text-dark" href="mailto:{{setting.email}}">{{setting.email}}</a>
+                </span>
+                
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock main %}

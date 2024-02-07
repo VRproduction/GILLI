@@ -1,0 +1,62 @@
+{% load static %}
+<header class="header-v1 ">
+    <div class="container-menu-desktop">
+        <div class="wrap-menu-desktop {{class}}">
+            <nav class="limiter-menu-desktop">
+                <div class="left-header">
+
+                    <div class="menu-desktop">
+                        <ul class="main-menu">
+                            <li>
+                                <a {% if request.path == '/' %}class="active-page"{% endif %} href="{% url "home" %}">ANA SƏHİFƏ</a>
+                            </li>
+                            <li>
+                                <a {% if request.path == '/about/' %}class="active-page"{% endif %} href="{% url "about" %}">Haqqımızda</a>
+                            </li>
+                            <li>
+                                <a {% if request.path == '/shop/' %}class="active-page"{% endif %} href="{% url "shop" %}">Məhsullar</a>
+                            </li>
+                            <li>
+                                <a {% if request.path|slice:":7" == '/blogs/' %}class="active-page"{% endif %} href="{% url "blog" %}">Bloq</a>
+                            </li>
+                            <li>
+                                <a {% if request.path == '/contact/' %}class="active-page"{% endif %} href="{% url "contact" %}">Əlaqə</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="center-header">
+
+                    <div class="logo">
+                        <a href="{% url "home" %}"><img src="{% if setting.logo %}{{setting.logo.url}}{% endif %}" alt="IMG-LOGO"></a>
+                    </div>
+                </div>
+                <div class="right-header">
+
+                    <div class="wrap-icon-header flex-w flex-r-m h-full wrap-menu-click p-t-8">
+                        <div class="h-full flex-m">
+                            <div class="icon-header-item flex-c-m trans-04 js-show-modal-search">
+                                <img src="{% static "images/icons/icon-search.png" %}" alt="SEARCH">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    {% include "components/header/mobile-menu.html" %}
+    <div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+        <button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+            <span class="lnr lnr-cross"></span>
+        </button>
+        <div class="container-search-header">
+            <form action='{% url "shop" %}' class="wrap-search-header flex-w">
+                <button class="flex-c-m trans-04">
+                    <span class="lnr lnr-magnifier"></span>
+                </button>
+                <input class="plh1" type="text" {% if request.GET.search %}value="{{request.GET.search}}"{% endif %}  name="search" placeholder="Axtar...">
+            </form>
+        </div>
+    </div>
+</header>

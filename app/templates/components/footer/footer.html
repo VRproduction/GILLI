@@ -1,0 +1,111 @@
+{% load static %}
+<footer class="bg0">
+    <div class="container">
+        <div class="wrap-footer justify-content-lg-between flex-w p-t-83 p-b-12">
+            <div class="footer-col1 p-b-50">
+                <div class="p-b-36">
+                    <span class="txt-m-109 cl3">
+                        Bizimlə Əlaqə
+                    </span>
+                </div>
+                <p class="txt-s-101 cl6 size-w-10 p-b-16">
+                    {{setting.footer_slogan}}
+                </p>
+                <ul>
+                    <li class="txt-s-101 cl6 flex-t p-b-10">
+                        <span class="size-w-11">
+                            <img src="{% static "images/icons/icon-mail.png" %}" alt="ICON-MAIL">
+                        </span>
+                        <span class="size-w-12 p-t-1">
+                            <a class="text-dark" href="mailto:{{setting.email}}">{{setting.email}}</a>
+                        </span>
+                    </li>
+                    <li class="txt-s-101 cl6 flex-t p-b-10">
+                        <span class="size-w-11">
+                            <img src="{% static "images/icons/icon-pin.png" %}" alt="ICON-MAIL">
+                        </span>
+                        <span class="size-w-12 p-t-1">
+                            {{setting.adress}}
+                        </span>
+                    </li>
+                    {% for number in setting.numbers.all %}
+                    <li class="txt-s-101 cl6 flex-t p-b-10">
+                        <span class="size-w-11">
+                            <img src="{% static "images/icons/icon-phone.png" %}" alt="ICON-MAIL">
+                        </span>
+                        <span class="size-w-12 p-t-1">
+                            <a class="text-dark" href="tel:{{number.number}}">{{number.number}}</a>
+                        </span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="footer-col2 p-b-50">
+                <div class="p-b-36">
+                    <span class="txt-m-109 cl3">
+                        Keçidlər
+                    </span>
+                </div>
+                <ul>
+                    <li class="p-b-16">
+                        <a href="{% url "about" %}" class="txt-s-101 cl6 hov-cl10 trans-04 p-tb-5">
+                            Haqqımızda
+                        </a>
+                    </li>
+                    <li class="p-b-16">
+                        <a href="{% url "shop" %}" class="txt-s-101 cl6 hov-cl10 trans-04 p-tb-5">
+                            Məhsullar
+                        </a>
+                    </li>
+                    <li class="p-b-16">
+                        <a href="{% url "blog" %}" class="txt-s-101 cl6 hov-cl10 trans-04 p-tb-5">
+                            Bloq
+                        </a>
+                    </li>
+                    <li class="p-b-16">
+                        <a href="{% url "contact" %}" class="txt-s-101 cl6 hov-cl10 trans-04 p-tb-5">
+                            Əlaqə
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-col4 p-t-8 p-b-50">
+                <div class="bo-all-3 bocl17 flex-col-c-m p-rl-28 p-t-17 p-b-20">
+                    <a href="{% url "home" %}" class="wrap-pic-max-s">
+                        <img src="{{setting.footer_logo.url}}" alt="LOGO">
+                    </a>
+                    <p class="txt-s-101 cl6 txt-center p-t-23">
+                        {{setting.footer_slogan_2}}
+                    </p>
+                    <div class="flex-w flex-c-m p-t-20">
+                        <a href="{% if setting.instagram %}{{setting.instagram}}{% else %}#{% endif %}" class="wrap-pic-max-s pos-relative lh-00 hov6 size-h-4 m-all-6">
+                            <img class="hov6-child1 trans-04" src="{% static "images/icons/icon-instagram.png" %}" alt="instagram">
+                            <img class="ab-t-l hov6-child2 trans-04" src="{% static "images/icons/icon-instagram2.png" %}"
+                                alt="instagram">
+                        </a>
+                        <a href="{% if setting.facebook %}{{setting.facebook}}{% else %}#{% endif %}" class="wrap-pic-max-s pos-relative lh-00 hov6 size-h-4 m-all-6">
+                            <img class="hov6-child1 trans-04" src="{% static "images/icons/icon-facebook.png" %}" alt="facebook">
+                            <img class="ab-t-l hov6-child2 trans-04" src="{% static "images/icons/icon-facebook2.png" %}"
+                                alt="facebook">
+                        </a>
+                        <a href="{% if setting.tiktok %}{{setting.tiktok}}{% else %}#{% endif %}" class="wrap-pic-max-s pos-relative lh-00 hov6 size-h-4 m-all-6">
+                            <img class="hov6-child1 trans-04" src="{% static "images/icons/icon-tiktok.png" %}" alt="tiktok">
+                            <img class="ab-t-l hov6-child2 trans-04" src="{% static "images/icons/icon-tiktok2.png" %}"
+                                alt="tiktok">
+                        </a>
+                        <a href="{% if setting.youtube %}{{setting.youtube}}{% else %}#{% endif %}" class="wrap-pic-max-s pos-relative lh-00 hov6 size-h-4 m-all-6">
+                            <img class="hov6-child1 trans-04" src="{% static "images/icons/youtube1.png" %}" alt="youtube">
+                            <img class="ab-t-l hov6-child2 trans-04" src="{% static "images/icons/youtube2.png" %}"
+                                alt="youtube">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-w flex-sb-m bo-t-1 bocl14 p-tb-14">
+            <span class="txt-s-101 cl9 p-tb-10 p-r-29">
+                ©<a class="text-success" href="{% if setting.copyright_link %}{{setting.copyright_link}}{% else %}#{% endif %}"> {{setting.copyright_title}} </a>{{current_year}} Bütün hüquqlar qorunur!
+            </span>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+{% block header %}
+    {% include "components/header/header.html" with class="bg-white" %}
+{% endblock header %}
+{% block main %}
+<section class="bg0 p-t-150 p-b-20">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-11 col-md-8 col-lg-9 m-rl-auto p-b-80">
+
+                <div class="p-b-50">
+                    <div class="wrap-pic-w">
+                        <img src="{{blog.image.url}}" alt="BLOG">
+                    </div>
+                    <div class="p-t-30">
+                        <h4 class="txt-m-125 cl3">
+                            {{blog.title}}
+                        </h4>
+                        <div class="flex-w flex-m txt-s-115 cl9 p-t-14 p-b-22">
+                            <span class="m-r-22">
+                                {{blog.created|date:"d M Y"}}
+                            </span>
+                        </div>
+                        <p class="txt-s-101 cl6 p-b-12">
+                            {{blog.description|safe}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-11 col-md-4 col-lg-3 m-rl-auto p-b-80">
+                <div class="rightbar">
+                    <div class="p-t-40">
+                        <h4 class="txt-m-101 cl3 p-b-37">
+                            Son Bloqlar
+                        </h4>
+                        <ul>
+                            {% for last_blog in last_blogs %}
+                            <li class="flex-w flex-sb-t p-b-30">
+                                <a href="{{last_blog.get_absolute_url}}" class="size-w-64 wrap-pic-w hov4">
+                                    <img src="{{last_blog.image.url}}" alt="IMG">
+                                </a>
+                                <div class="size-w-65 flex-col-l p-t-7">
+                                    <a href="{{last_blog.get_absolute_url}}" class="txt-m-103 cl3 hov-cl10 trans-04 p-b-3">
+                                        {{last_blog.title|truncatechars:"15"}}
+                                    </a>
+                                    <span class="txt-s-106 cl9">
+                                        {{last_blog.created|date:"d M Y"}}
+                                    </span>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock main %}

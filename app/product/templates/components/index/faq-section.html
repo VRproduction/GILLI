@@ -1,0 +1,35 @@
+<section class="faq-section">
+    <div class="container">
+        <div class="row">
+            <!-- ***** FAQ Start ***** -->
+            <div class="col-md-6 offset-md-3">
+
+                <div class="faq-title text-center pb-3">
+                    <h2>Tez-tez verilən suallar</h2>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-12 offset-md-3">
+                <div class="faq" id="accordion">
+                   {% for faq in faqs %}
+                    <div class="card">
+                        <div class="card-header" id="faqHeading-{{forloop.counter}}">
+                            <div class="mb-0">
+                                <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-{{forloop.counter}}"
+                                    data-aria-expanded="true" data-aria-controls="faqCollapse-{{forloop.counter}}">
+                                    <span class="badge">{{forloop.counter}}</span>{{faq.title}}
+                                </h5>
+                            </div>
+                        </div>
+                        <div id="faqCollapse-{{forloop.counter}}" class="collapse {% if forloop.counter == 1 %}show{% endif %}" aria-labelledby="faqHeading-{{forloop.counter}}"
+                            data-parent="#accordion">
+                            <div class="card-body">
+                                <p>{{faq.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

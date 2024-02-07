@@ -1,0 +1,18 @@
+HTTrack3.49-2+libhtsjava.so.2 launched on Tue, 06 Feb 2024 20:59:21 at https://freebw.com/templates/oragnive-v1/index.html
+(httrack https://freebw.com/templates/oragnive-v1/index.html -O template )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+21:06:38	Error: 	"Not Found" (404) at link https://freebw.com/templates/oragnive-v1/fonts/Lato/Lato-SemiBold.ttf (from https://freebw.com/templates/oragnive-v1/css/main.css)
+21:06:42	Error: 	"Not Found" (404) at link https://freebw.com/templates/oragnive-v1/TweenLite.js (from https://freebw.com/templates/oragnive-v1/vendor/revolution/js/jquery.themepunch.tools.min.js)
+21:06:42	Error: 	"Not Found" (404) at link https://freebw.com/templates/oragnive-v1/Version/ (from https://freebw.com/templates/oragnive-v1/vendor/revolution/js/jquery.themepunch.tools.min.js)
+21:06:42	Error: 	"Not Found" (404) at link https://freebw.com/templates/oragnive-v1/themepunch.revolution.min.js (from https://freebw.com/templates/oragnive-v1/vendor/revolution/js/jquery.themepunch.revolution.min.js)
+21:06:42	Error: 	"Not Found" (404) at link https://freebw.com/templates/oragnive-v1/jquery.themepunch.revolution.min.js (from https://freebw.com/templates/oragnive-v1/vendor/revolution/js/jquery.themepunch.revolution.min.js)
+21:06:42	Error: 	"Not Found" (404) at link https://freebw.com/templates/oragnive-v1/jquery.themepunch.revolution.js (from https://freebw.com/templates/oragnive-v1/vendor/revolution/js/jquery.themepunch.revolution.min.js)
+21:06:42	Error: 	"Not Found" (404) at link https://freebw.com/templates/oragnive-v1/images/icons/location.png (from https://freebw.com/templates/oragnive-v1/js/map-custom.js)
+
+HTTrack Website Copier/3.49-2 mirror complete in 7 minutes 21 seconds : 440 links scanned, 432 files written (19315320 bytes overall) [16817197 bytes received at 38134 bytes/sec], 3862994 bytes transferred using HTTP compression in 105 files, ratio 26%, 48.8 requests per connection
+(7 errors, 0 warnings, 0 messages)
