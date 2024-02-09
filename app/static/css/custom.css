@@ -117,15 +117,16 @@
 }
 
 .defaultimg{
-  background-size: contain !important;
-  background-position: 1000px !important;
+  background-size: cover !important;
+  background-position: center !important;
 }
 .layer2{
-  width: 800px !important;
-  max-width: 800px !important;
+  width: 680px !important;
+  max-width: 680px !important;
   margin: 50px 0 0 0 !important;
-  font-size: 40px;
+  font-size: 48px !important;
   font-weight: 900 !important;
+  line-height: 50px !important;
 
 }
 .sec-slider *{
@@ -138,8 +139,19 @@
   height: 268px;
   object-fit: cover;
 }
-
+.d-desktop{
+  display: block;
+}
+.d-mobile{
+  display: none;
+}
 @media(max-width:767px) {
+  .d-desktop{
+    display: none;
+  }
+  .d-mobile{
+    display: block;
+  }
   .p-t-170{
     padding-top: 20px;
   }
@@ -147,7 +159,8 @@
     padding-top: 20px;
   }
   .defaultimg{
-    background-position: 90px !important;
+    background-size: cover !important;
+    background-position: right !important;
 
   }
   .layer2{

@@ -53,6 +53,7 @@ class PhoneNumber(models.Model):
 
 class IndexSlider(models.Model):
     image = models.ImageField(upload_to = 'index-slider', null = True, blank = True)
+    mobile_image = models.ImageField(upload_to = 'index-slider-mobile', verbose_name = 'mobile photo(390x602)px' , null = True, blank = True)
     title_small = models.CharField(max_length = 100, null = True, blank = True)
     title_big = models.CharField(max_length = 100, null = True, blank = True)
     description = models.TextField(null = True, blank = True)

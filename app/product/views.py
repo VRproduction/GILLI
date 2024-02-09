@@ -13,7 +13,7 @@ class HomePageView(TemplateView):
         context["slider"] = IndexSlider.objects.first()
         context["video"] = IndexVideo.objects.first()
         context["about"] = About.objects.first()
-        context["products"] = Product.objects.all()[:8]
+        context["products"] = Product.objects.all()[:4]
         context["categories"] = Category.objects.all()
         context["choose_section"] = WhyChooseUs.objects.first()
         context["faqs"] = FAQ.objects.all()

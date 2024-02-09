@@ -1,66 +1,85 @@
-<section class="sec-slider">
-    <div class="rev_slider_wrapper fullwidthbanner-container">
-        <div id="rev_slider_1" class="rev_slide fullwidthabanner" data-version="5.4.5" style="display:none">
-            <ul>
+    <section class="sec-slider">
+        <div class="rev_slider_wrapper fullwidthbanner-container">
+            <div id="rev_slider_1" class="rev_slide fullwidthabanner" data-version="5.4.5" style="display:none">
+                <ul>
+                    <li data-transition="fade">
 
-                <li data-transition="fade">
+                        <img id="sliderImage" src="{{slider.image.url}}" alt="IMG-BG" class="rev-slidebg">
 
-                    <img src="{{slider.image.url}}" alt="IMG-BG" class="rev-slidebg">
+                        <div class="tp-caption tp-resizeme layer1"
+                            data-frames="[{&quot;delay&quot;:1300,&quot;speed&quot;:1300,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
+                            data-visibility="['on', 'on', 'on', 'on']" data-fontsize="['35', '35', '35', '35']"
+                            data-lineheight="['42', '42', '42', '42']" data-color="['#333']"
+                            data-textAlign="['left', 'left', 'center', 'center']" data-x="['left']" data-y="['center']"
+                            data-hoffset="['310', '80', '0', '0']" data-voffset="['-78', '-78', '-78', '-150']"
+                            data-width="['650','650','768','576']" data-height="['auto']" data-whitespace="['normal']"
+                            data-paddingtop="[0, 0, 0, 0]" data-paddingright="[15, 15, 15, 15]"
+                            data-paddingbottom="[0, 0, 0, 0]" data-paddingleft="[15, 15, 15, 15]" data-basealign="slide"
+                            data-responsive_offset="on">
+                            {{slider.title_small}}
+                        </div>
 
-                    <div class="tp-caption tp-resizeme layer1"
-                        data-frames="[{&quot;delay&quot;:1300,&quot;speed&quot;:1300,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-                        data-visibility="['on', 'on', 'on', 'on']" data-fontsize="['35', '35', '35', '35']"
-                        data-lineheight="['42', '42', '42', '42']" data-color="['#333']"
-                        data-textAlign="['left', 'left', 'center', 'center']" data-x="['left']" data-y="['center']"
-                        data-hoffset="['310', '80', '0', '0']" data-voffset="['-78', '-78', '-78', '-150']"
-                        data-width="['650','650','768','576']" data-height="['auto']" data-whitespace="['normal']"
-                        data-paddingtop="[0, 0, 0, 0]" data-paddingright="[15, 15, 15, 15]"
-                        data-paddingbottom="[0, 0, 0, 0]" data-paddingleft="[15, 15, 15, 15]" data-basealign="slide"
-                        data-responsive_offset="on">
-                        {{slider.title_small}}
-                    </div>
+                        <h2 class="tp-caption tp-resizeme layer2"
+                            data-frames="[{&quot;delay&quot;:500,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:[175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:1;&quot;,&quot;mask&quot;:&quot;x:[-100%];y:0;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
+                            data-visibility="['on', 'on', 'on', 'on']" data-fontsize="['75', '75', '75', '75']"
+                            data-lineheight="['82', '82', '82', '82']" data-color="['#333']"
+                            data-textAlign="['left', 'left', 'center', 'center']" data-x="['left']" data-y="['center']"
+                            data-hoffset="['310', '80', '0', '0']" data-voffset="['0', '0', '0', '-30']"
+                            data-width="['650','650','768','576']" data-height="['auto']" data-whitespace="['normal']"
+                            data-paddingtop="[0, 0, 0, 0]" data-paddingright="[15, 15, 15, 15]"
+                            data-paddingbottom="[0, 0, 0, 0]" data-paddingleft="[15, 15, 15, 15]" data-basealign="slide"
+                            data-responsive_offset="on">
+                            {{slider.title_big}}
+                        </h2>
 
-                    <h2 class="tp-caption tp-resizeme layer2"
-                        data-frames="[{&quot;delay&quot;:500,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:[175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:1;&quot;,&quot;mask&quot;:&quot;x:[-100%];y:0;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-                        data-visibility="['on', 'on', 'on', 'on']" data-fontsize="['75', '75', '75', '75']"
-                        data-lineheight="['82', '82', '82', '82']" data-color="['#333']"
-                        data-textAlign="['left', 'left', 'center', 'center']" data-x="['left']" data-y="['center']"
-                        data-hoffset="['310', '80', '0', '0']" data-voffset="['0', '0', '0', '-30']"
-                        data-width="['650','650','768','576']" data-height="['auto']" data-whitespace="['normal']"
-                        data-paddingtop="[0, 0, 0, 0]" data-paddingright="[15, 15, 15, 15]"
-                        data-paddingbottom="[0, 0, 0, 0]" data-paddingleft="[15, 15, 15, 15]" data-basealign="slide"
-                        data-responsive_offset="on">
-                        {{slider.title_big}}
-                    </h2>
+                        <p class="tp-caption tp-resizeme layer3"
+                            data-frames="[{&quot;delay&quot;:1300,&quot;speed&quot;:1300,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:-50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
+                            data-visibility="['on', 'on', 'on', 'on']" data-fontsize="['15', '15', '15', '15']"
+                            data-lineheight="['24', '24', '24', '24']" data-color="['#666']"
+                            data-textAlign="['left', 'left', 'center', 'center']" data-x="['left']" data-y="['center']"
+                            data-hoffset="['310', '80', '0', '0']" data-voffset="['95', '95', '95', '95']"
+                            data-width="['650','650','768','576']" data-height="['auto', 'auto', 'auto', 'auto']"
+                            data-whitespace="['normal']" data-paddingtop="[0, 0, 0, 0]"
+                            data-paddingright="[15, 15, 35, 15]" data-paddingbottom="[0, 0, 0, 0]"
+                            data-paddingleft="[15, 15, 35, 15]" data-basealign="slide" data-responsive_offset="on">
+                            {{slider.description}}
+                        </p>
 
-                    <p class="tp-caption tp-resizeme layer3"
-                        data-frames="[{&quot;delay&quot;:1300,&quot;speed&quot;:1300,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:-50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-                        data-visibility="['on', 'on', 'on', 'on']" data-fontsize="['15', '15', '15', '15']"
-                        data-lineheight="['24', '24', '24', '24']" data-color="['#666']"
-                        data-textAlign="['left', 'left', 'center', 'center']" data-x="['left']" data-y="['center']"
-                        data-hoffset="['310', '80', '0', '0']" data-voffset="['95', '95', '95', '95']"
-                        data-width="['650','650','768','576']" data-height="['auto', 'auto', 'auto', 'auto']"
-                        data-whitespace="['normal']" data-paddingtop="[0, 0, 0, 0]"
-                        data-paddingright="[15, 15, 35, 15]" data-paddingbottom="[0, 0, 0, 0]"
-                        data-paddingleft="[15, 15, 35, 15]" data-basealign="slide" data-responsive_offset="on">
-                        {{slider.description}}
-                    </p>
-
-                    <div class="tp-caption tp-resizeme flex-w layer4"
-                        data-frames="[{&quot;delay&quot;:2500,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;z:0;rX:0;rY:0;rZ:0;sX:0.6;sY:0.6;skX:0;skY:0;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power4.easeOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-                        data-x="['left']" data-y="['center']" data-hoffset="['310', '80', '0', '0']"
-                        data-voffset="['203', '203', '203', '203']" data-width="['650','650','768','576']"
-                        data-height="['auto']" data-paddingtop="[0, 0, 0, 0]" data-paddingright="[15, 15, 15, 15]"
-                        data-paddingbottom="[0, 0, 0, 0]" data-paddingleft="[15, 15, 15, 15]" data-basealign="slide"
-                        data-responsive_offset="on">
-                        <a href="{% url "shop" %}" class="btn-slide flex-c-m">
-                            İNDİ AL
-                            <span class="lnr lnr-chevron-right m-l-7"></span>
-                            <span class="lnr lnr-chevron-right"></span>
-                        </a>
-                    </div>
-                </li>
-            </ul>
+                        <div class="tp-caption tp-resizeme flex-w layer4"
+                            data-frames="[{&quot;delay&quot;:2500,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;z:0;rX:0;rY:0;rZ:0;sX:0.6;sY:0.6;skX:0;skY:0;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power4.easeOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
+                            data-x="['left']" data-y="['center']" data-hoffset="['310', '80', '0', '0']"
+                            data-voffset="['203', '203', '203', '203']" data-width="['650','650','768','576']"
+                            data-height="['auto']" data-paddingtop="[0, 0, 0, 0]" data-paddingright="[15, 15, 15, 15]"
+                            data-paddingbottom="[0, 0, 0, 0]" data-paddingleft="[15, 15, 15, 15]" data-basealign="slide"
+                            data-responsive_offset="on">
+                            <a href="{% url "shop" %}" class="btn-slide flex-c-m">
+                                İNDİ AL
+                                <span class="lnr lnr-chevron-right m-l-7"></span>
+                                <span class="lnr lnr-chevron-right"></span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+<script>
+function changeImageBasedOnScreenWidth() {
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var imageElement = document.getElementsByClassName("defaultimg")[0];
+
+    if (screenWidth <= 667) {
+        imageElement.setAttribute('src', '{{slider.mobile_image.url}}');
+        imageElement.style.backgroundImage = 'url(' + '{{slider.mobile_image.url}}' + ')';
+
+    } else {
+        imageElement.setAttribute('src', '{{slider.image.url}}');
+        imageElement.style.backgroundImage = 'url(' + '{{slider.image.url}}' + ')';
+
+    }
+}
+
+window.onload = changeImageBasedOnScreenWidth;
+window.onresize = changeImageBasedOnScreenWidth;
+
+</script>
