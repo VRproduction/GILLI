@@ -134,6 +134,11 @@
 .product-link-title{
   font-family: Arial, Helvetica, sans-serif !important;
 }
+.product-image{
+  height: 268px;
+  object-fit: cover;
+}
+
 @media(max-width:767px) {
   .p-t-170{
     padding-top: 20px;
