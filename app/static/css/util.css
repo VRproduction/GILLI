@@ -22264,7 +22264,11 @@ iframe {
 
 .wrap-pic-w>img {
     width: 100%;
-    display: inline-block
+    display: inline-block;
+    height: 268px;
+    object-fit: cover;
+   
+
 }
 
 .wrap-pic-max-w>img {

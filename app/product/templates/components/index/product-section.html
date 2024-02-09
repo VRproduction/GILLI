@@ -6,6 +6,7 @@
                 Məhsullar
             </h3>
         </div>
+        {% if categories.count > 0 %}
         <div class="p-b-46">
             <div class="flex-w flex-c-m filter-tope-group">
                 <button class="txt-m-104 cl9 hov2 trans-04 p-rl-27 p-b-10 how-active1" data-filter="*">
@@ -18,6 +19,7 @@
                 {% endfor %}
             </div>
         </div>
+        {% endif %}
         <div class="row isotope-grid">
             {% for product in products %}
             {% include "components/product/product-item.html" with product=product %}

@@ -7,8 +7,8 @@
                     class="txt-m-103 cl3 txt-center hov-cl10 trans-04 js-name-b1 p-b-20">
                     {{product.title}}
                 </a>
-                    <a {% if product.link %}href="{{product.link}}"{% endif %} class="flex-c-m text-white txt-s-103 cl0 bg10 size-a-2 hov-btn2 trans-04 m-b-30 ">
-                        Sifariş et
+                    <a href="{{product.get_absolute_url}}" class="product-link-title flex-c-m text-white txt-s-103 cl0 bg10 size-a-2 hov-btn2 trans-04 m-b-30 ">
+                        Məhsulu gör
                     </a>
             </div>
             
