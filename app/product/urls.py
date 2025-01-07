@@ -11,5 +11,7 @@ urlpatterns = [
     path('blogs/<int:pk>/', views.BlogDetailPageView.as_view(), name='blog-detail'),
 
     path('products/<int:pk>/', views.ProductDetailPageView.as_view(), name='product-detail'),
+    
+    path('gallery/', views.GalleryPageView.as_view(), name='gallery'),
 
 ]

@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static "css/gallery.css" %}">
+{% endblock css %}
+
+{% block main %}
+<div class="bg0 p-t-170 p-b-95">
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-button active" data-tab="image-gallery">Image Gallery</button>
+            <button class="tab-button" data-tab="video-gallery">Video Gallery</button>
+          </div>
+          
+          <!-- Image Gallery Tab -->
+          <div class="tab-content active" id="image-gallery">
+            <div class="gallery">
+              {% for image in images %}
+                <div class="gallery-item image-gallery-item">
+                    <img 
+                        src="{{ image.image.url }}" 
+                        alt="Image {{ forloop.counter }}" 
+                        data-index="{{ forloop.counter0 }}" 
+                        data-caption="{{ image.caption|default:'' }}" 
+                        onclick="openSlider(this)">
+                    {% if image.caption %}
+                    <div class="caption">{{ image.caption }}</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            
+            <!-- Slider -->
+          <div id="slider" class="slider hidden">
+            <span class="close" onclick="closeSlider()">&times;</span>
+            <div class="slider-content">
+                <img id="slider-image" src="" alt="Slider Image">
+                <div id="slider-caption" class="slider-caption"></div>
+            </div>
+            <button class="prev" onclick="changeSlide(-1)">
+              <svg width="70" height="70" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 6.3252L9 12.3252L15 18.3252" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            </button>
+            <button class="next" onclick="changeSlide(1)">
+              <svg width="70" height="70" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 6.3252L15 12.3252L9 18.3252" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            </button>
+            <!-- Thumbnail Container -->
+            
+            <div class="thumbnail-container">
+                <button class="thumbnail-nav left" onclick="scrollThumbnails(-1)">
+                    <!-- SVG for Left Button -->
+                    <svg width="24" height="24" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M15 6.3252L9 12.3252L15 18.3252" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <div class="thumbnails-wrapper">
+                    <div class="thumbnails">
+                        {% for image in images %}
+                        <img 
+                            src="{{ image.image.url }}" 
+                            alt="Thumbnail {{ forloop.counter }}" 
+                            class="thumbnail" 
+                            data-index="{{ forloop.counter0 }}" 
+                            onclick="selectThumbnail(this)">
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="thumbnail-nav right" onclick="scrollThumbnails(1)">
+                    <!-- SVG for Right Button -->
+                    <svg width="24" height="24" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 6.3252L15 12.3252L9 18.3252" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+            </div>
+          </div>
+        </div>
+                       
+          {% comment %} <button class="prev" onclick="changeSlide(-1)">
+            <svg width="70" height="70" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 6.3252L9 12.3252L15 18.3252" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <button class="next" onclick="changeSlide(1)">
+            <svg width="70" height="70" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 6.3252L15 12.3252L9 18.3252" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button> {% endcomment %}
+          
+          <!-- Video Gallery Tab -->
+          <div class="tab-content" id="video-gallery">
+              <div class="gallery">
+                  {% for video in videos %}
+                  <div class="gallery-item">
+                      {% if video.video %}
+                      <video class="video-player" src="{{ video.video.url }}" controls></video>
+                      {% else %}
+                      <iframe class="video-player" width="560" height="315" src="{{ video.youtube_iframe }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      {% endif %}
+                  </div>
+                  {% endfor %}
+              </div>
+          </div>
+        
+          
+    </div>
+</div>
+
+{% endblock main %}
+
+{% block js %}
+<script src="{% static "js/gallery.js" %}"></script>
+{% endblock js %}

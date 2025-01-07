@@ -3,6 +3,9 @@ from django.contrib import messages
 from django.urls import reverse_lazy
 
 from .models import IndexSlider, IndexVideo, About, Product, Category, WhyChooseUs, FAQ, Comment, Blog, Contact
+
+from gallery.models import ImageGallery, VideoGallery
+
 from .forms import ContactForm
 
 class HomePageView(TemplateView):
@@ -77,4 +80,13 @@ class ContactPageView(FormView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        return context
+
+class GalleryPageView(TemplateView):
+    template_name = 'gallery.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["videos"] = VideoGallery.objects.all()
+        context["images"] = ImageGallery.objects.all()
         return context

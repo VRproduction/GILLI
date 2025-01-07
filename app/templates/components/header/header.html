@@ -17,6 +17,9 @@
                                 <a {% if request.path == '/shop/' %}class="active-page"{% endif %} href="{% url "shop" %}">Məhsullar</a>
                             </li>
                             <li>
+                                <a {% if request.path == '/gallery/' %}class="active-page"{% endif %} href="{% url "gallery" %}">Qalereya</a>
+                            </li>
+                            <li>
                                 <a {% if request.path|slice:":7" == '/blogs/' %}class="active-page"{% endif %} href="{% url "blog" %}">Bloq</a>
                             </li>
                             <li>
