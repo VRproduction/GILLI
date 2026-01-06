@@ -5,15 +5,15 @@ Django>=4.2,<5.1
 # psycopg2-binary>=2.9  # PostgreSQL için gerekirse ekle
 
 # Media
-pillow>=11.0
+pillow>=9.0,<11.0
 
 # Rich Text Editor
-django-ckeditor>=6.7
+django-ckeditor>=6.0,<7.0
 
 # Production Server
-gunicorn>=23.0
+gunicorn>=20.0,<24.0
 
 # Environment
-python-dotenv>=1.0
+python-dotenv>=0.19,<2.0
 # Slug generation with Unicode support
-python-slugify>=8.0
+python-slugify>=6.0,<9.0
