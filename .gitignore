@@ -130,17 +130,33 @@ target/
 *.pot
 *.pyc
 __pycache__/
-migrations/
 local_settings.py
-# db.sqlite3
+db.sqlite3
 .env
 
-.venv
-venv
-.idea
+# Virtual Environment
+.venv/
+venv/
+env/
 
-# media/
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Media & Static
+media/
 staticfiles/
+static_root/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.backup
 
 celerybeat-schedule.db
 celerybeat-schedule

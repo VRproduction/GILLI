@@ -1,0 +1,24 @@
+{% load static %}
+
+<!-- Meta Tags -->
+<meta name="title" content="{% if page_title %}{{ page_title }}{% else %}{{ seo.meta_title }}{% endif %}">
+<meta name="description" content="{% if page_description %}{{ page_description }}{% else %}{{ seo.meta_description }}{% endif %}">
+<meta name="keywords" content="{% if page_keywords %}{{ page_keywords }}{% else %}{{ seo.meta_keywords }}{% endif %}">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:title" content="{% if page_title %}{{ page_title }}{% else %}{{ seo.og_title|default:seo.meta_title }}{% endif %}">
+<meta property="og:description" content="{% if page_description %}{{ page_description }}{% else %}{{ seo.og_description|default:seo.meta_description }}{% endif %}">
+{% if seo.og_image %}
+<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ seo.og_image.url }}">
+{% endif %}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="{{ request.build_absolute_uri }}">
+<meta name="twitter:title" content="{% if page_title %}{{ page_title }}{% else %}{{ seo.og_title|default:seo.meta_title }}{% endif %}">
+<meta name="twitter:description" content="{% if page_description %}{{ page_description }}{% else %}{{ seo.og_description|default:seo.meta_description }}{% endif %}">
+{% if seo.og_image %}
+<meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{{ seo.og_image.url }}">
+{% endif %}

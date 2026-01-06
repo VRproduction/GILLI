@@ -1,9 +1,19 @@
-asgiref==3.7.2
-Django==4.2.10
-django-ckeditor==6.7.1
-django-js-asset==2.2.0
-gunicorn==21.2.0
-packaging==23.2
-pillow==10.2.0
-sqlparse==0.4.4
-typing-extensions==4.9.0
+# Django
+Django>=5.2,<6.0
+
+# Database
+# psycopg2-binary>=2.9  # PostgreSQL için gerekirse ekle
+
+# Media
+pillow>=11.0
+
+# Rich Text Editor
+django-ckeditor>=6.7
+
+# Production Server
+gunicorn>=23.0
+
+# Environment
+python-dotenv>=1.0
+# Slug generation with Unicode support
+python-slugify>=8.0
