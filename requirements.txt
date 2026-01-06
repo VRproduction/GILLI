@@ -1,5 +1,5 @@
 # Django
-Django>=5.2,<6.0
+Django>=4.2,<5.1
 
 # Database
 # psycopg2-binary>=2.9  # PostgreSQL için gerekirse ekle
